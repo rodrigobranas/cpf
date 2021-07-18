@@ -1,10 +1,7 @@
 function validate(str) {
 	if (str !== null && str !== undefined) {
 		if (str.length >= 11 || str.length <= 14){  
-			str=str.replace('.','');  
-			str=str.replace('.','');  
-			str=str.replace('-','');  
-			str=str.replace(" ","");  
+			str=str.replace('.','').replace('.','').replace('-','').replace(" ","");  
 			if (!str.split("").every(c => c === str[0])) {
 				try{  
 					let     d1, d2;  
@@ -28,11 +25,8 @@ function validate(str) {
 					};  
 						
 					rest = (d1 % 11);  
-		
 					dg1 = (rest < 2) ? dg1 = 0 : 11 - rest;  
-						
 					d2 += 2 * dg1;  
-		
 					rest = (d2 % 11);  
 		
 					if (rest < 2)  
