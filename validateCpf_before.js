@@ -8,11 +8,11 @@ function validate(str) {
 			if (!str.split("").every(c => c === str[0])) {
 				try{  
 					let     d1, d2;  
-					let     digito1, digito2, resto;  
+					let     dg1, dg2, rest;  
 					let     digito;  
 						let     nDigResult;  
 					d1 = d2 = 0;  
-					digito1 = digito2 = resto = 0;  
+					dg1 = dg2 = rest = 0;  
 						
 					for (let nCount = 1; nCount < str.length -1; nCount++) {  
 
@@ -29,21 +29,21 @@ function validate(str) {
 						}
 					};  
 						
-					resto = (d1 % 11);  
+					rest = (d1 % 11);  
 		
-					digito1 = (resto < 2) ? digito1 = 0 : 11 - resto;  
+					dg1 = (rest < 2) ? dg1 = 0 : 11 - rest;  
 						
-					d2 += 2 * digito1;  
+					d2 += 2 * dg1;  
 		
-					resto = (d2 % 11);  
+					rest = (d2 % 11);  
 		
-					if (resto < 2)  
-						digito2 = 0;  
+					if (rest < 2)  
+						dg2 = 0;  
 					else  
-						digito2 = 11 - resto;  
+						dg2 = 11 - rest;  
 						
 					let nDigVerific = str.substring(str.length-2, str.length);  
-					nDigResult = "" + digito1 + "" + digito2;  
+					nDigResult = "" + dg1 + "" + dg2;  
 					return nDigVerific == nDigResult;
 				}catch (e){  
 					console.error("Erro !"+e);  
