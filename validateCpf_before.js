@@ -15,7 +15,7 @@ function validate(str) {
 					digito1 = digito2 = resto = 0;  
 						
 					for (let nCount = 1; nCount < str.length -1; nCount++) {  
-						
+
 						if (isNaN(parseInt(str.substring(nCount -1, nCount)))) {
 							return false;
 
@@ -54,8 +54,6 @@ function validate(str) {
 	} else return false;
 }
 
-console.log(validate("00000000000"));
-console.log(validate("86446422784"));
-console.log(validate("864.464.227-84"));
-console.log(validate("91720489726"));
-console.log(validate("a1720489726"));
+module.exports = {
+	validate
+};

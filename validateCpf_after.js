@@ -3,7 +3,7 @@ const FACTOR_DIGIT_2 = 11;
 const MAX_DIGITS_1 = 9;
 const MAX_DIGITS_2 = 10;
 
-function validateCpf(cpf = "") {
+function validate(cpf = "") {
 	cpf = extractDigits(cpf);
 	if (isInvalidLength(cpf)) return false;
 	if (isBlocked(cpf)) return false;
@@ -42,8 +42,6 @@ function getCheckDigit(cpf) {
 	return cpf.slice(9);
 }
 
-console.log(validateCpf("00000000000"));
-console.log(validateCpf("86446422799"));
-console.log(validateCpf("86446422784"));
-console.log(validateCpf("864.464.227-84"));
-console.log(validateCpf("91720489726"));
+module.exports = {
+	validate
+};
