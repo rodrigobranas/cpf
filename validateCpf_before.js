@@ -3,7 +3,6 @@ function validate(str) {
 	if (str !== null && str !== undefined) {
 		if (str.length >= 11 || str.length <= 14){  
 			str=str.replace('.','').replace('.','').replace('-','').replace(" ","");  
-
 			if (!str.split("").every(c => c === str[0])) {
 				try{  
 					let     d1, d2;  
