@@ -21,10 +21,8 @@ function validate(str) {
 
 						} else {
 
-							digito = parseInt(str.substring(nCount -1, nCount));  
-							
+							digito = parseInt(str.substring(nCount -1, nCount));  							
 							d1 = d1 + ( 11 - nCount ) * digito;  
-							
 							d2 = d2 + ( 12 - nCount ) * digito;  
 						}
 					};  
