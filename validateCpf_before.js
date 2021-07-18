@@ -10,14 +10,23 @@ function validate(str) {
 					let     d1, d2;  
 					let     digito1, digito2, resto;  
 					let     digito;  
-					let     nDigResult;  
+						let     nDigResult;  
 					d1 = d2 = 0;  
 					digito1 = digito2 = resto = 0;  
 						
 					for (let nCount = 1; nCount < str.length -1; nCount++) {  
-						digito = parseInt(str.substring(nCount -1, nCount));  
-						d1 = d1 + ( 11 - nCount ) * digito;  
-						d2 = d2 + ( 12 - nCount ) * digito;  
+						
+						if (isNaN(parseInt(str.substring(nCount -1, nCount)))) {
+							return false;
+
+						} else {
+
+							digito = parseInt(str.substring(nCount -1, nCount));  
+							
+							d1 = d1 + ( 11 - nCount ) * digito;  
+							
+							d2 = d2 + ( 12 - nCount ) * digito;  
+						}
 					};  
 						
 					resto = (d1 % 11);  
@@ -48,4 +57,5 @@ function validate(str) {
 console.log(validate("00000000000"));
 console.log(validate("86446422784"));
 console.log(validate("864.464.227-84"));
-console.log(validateCpf("91720489726"));
+console.log(validate("91720489726"));
+console.log(validate("a1720489726"));
