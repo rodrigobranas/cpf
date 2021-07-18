@@ -13,14 +13,14 @@ function validate(str) {
 					dg1 = dg2 = rest = 0;  
 						
 					for (let nCount = 1; nCount < str.length -1; nCount++) {  
-						if (isNaN(parseInt(str.substring(nCount -1, nCount)))) {
-							return false;
-						} else {
+						// if (isNaN(parseInt(str.substring(nCount -1, nCount)))) {
+						// 	return false;
+						// } else {
 
 							digito = parseInt(str.substring(nCount -1, nCount));  							
 							d1 = d1 + ( 11 - nCount ) * digito;  
 							d2 = d2 + ( 12 - nCount ) * digito;  
-						}
+						// }
 					};  
 						
 					rest = (d1 % 11);  
